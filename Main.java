@@ -7,12 +7,16 @@ public class Main {
         Garcom garcom = new Garcom(cozinha);
         ArrayList<Cliente> clientes = new ArrayList<>();
 
-        Cliente cliente = new Cliente("Ronaldo", 100, true);
+        String nome = IO.readln("\nQual o seu nome?\n");
+
+        Cliente cliente = new Cliente(nome, 100, true);
         clientes.add(cliente);
         cliente = new Cliente("Alessandra", 120, true);
         clientes.add(cliente);
 
-        clientes.getFirst().chamarGarcom(garcom);
+        Cliente user = clientes.getFirst();
+        user.chamarGarcom(garcom);
+        user.pedirConta(garcom);
     }
 
 }

@@ -8,6 +8,7 @@ public class Cozinha {
     Cozinha() {
         this.pedidos = new ArrayList<>();
         this.estoque = new HashMap<>();
+
         Ingrediente i = new Ingrediente("batata", 10);
         estoque.put(i.getId(), i);
         i = new Ingrediente("verdura", 10);
@@ -29,8 +30,14 @@ public class Cozinha {
 
     public void restocar(){
         this.estoque.forEach( (key, i) -> i.addIngredientes(10));
-        //Thread.sleep(5000);
-        //sout("Enchendo o estoque...");
+
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        System.out.println("Enchendo o estoque...");
     }
 
     public boolean prepararPratos() {

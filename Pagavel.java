@@ -1,3 +1,3 @@
 public interface Pagavel {
-    public void pagar();
+    public boolean pagar();
 }
